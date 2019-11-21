@@ -135,8 +135,8 @@ class CoffeeService {
     }
 
     Mono<Coffee> getCoffeeByName(String name) {
-        return repo.findCoffeeByName(name);
-                //.defaultIfEmpty(new Coffee("12345", "My favorite coffee"));
+        return repo.findCoffeeByName(name)
+                .defaultIfEmpty(new Coffee("12345", "My Favorite Coffee"));
     }
 
     Flux<CoffeeOrder> getOrdersForCoffee(String coffeeId) {
